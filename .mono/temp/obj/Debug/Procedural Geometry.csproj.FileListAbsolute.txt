@@ -1,0 +1,9 @@
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\bin\Debug\Procedural Geometry.dll
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\bin\Debug\Procedural Geometry.pdb
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\obj\Debug\Procedural Geometry.csproj.AssemblyReference.cache
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\obj\Debug\Procedural Geometry.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\obj\Debug\Procedural Geometry.AssemblyInfoInputs.cache
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\obj\Debug\Procedural Geometry.AssemblyInfo.cs
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\obj\Debug\Procedural Geometry.csproj.CoreCompileInputs.cache
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\obj\Debug\Procedural Geometry.dll
+C:\Users\after\Documents\Godot\Procedural Geometry\.mono\temp\obj\Debug\Procedural Geometry.pdb
