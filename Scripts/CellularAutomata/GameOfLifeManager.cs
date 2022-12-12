@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Collections.Generic;
 
 enum CellType
 {
@@ -10,6 +9,9 @@ enum CellType
 public class GameOfLifeManager : Node2D
 {
     TextureRect textureRect;
+
+
+
 
     [Export]
     Color _cellColor = new Color();
@@ -25,8 +27,6 @@ public class GameOfLifeManager : Node2D
     CellType[,] cells;
 
 
-    ImageTexture imageTexture = new ImageTexture();
-
     public override void _Ready()
     {
         cells = new CellType[_width, _height];
@@ -40,42 +40,42 @@ public class GameOfLifeManager : Node2D
     private void DrawGrid()
     {
         Vector2 viewport = GetViewport().GetVisibleRect().Size;
-        Image image = new Image();
-        image.Create((int)viewport.x, (int)viewport.y, false, Image.Format.Rgba8);
+        Image gridImage = new Image();
+        gridImage.Create((int)viewport.x, (int)viewport.y, false, Image.Format.Rgba8);
 
-        image.Lock();
+        gridImage.Lock();
 
         float spacingX = viewport.x / _width;
         float spacingY = viewport.y / _height;
 
 
         //Draw Line
-        for (int x = 0; x < _width; x++)
+        for (int x = 1; x < _width - 1; x++)
         {
-            for (int y = 0; y < _height; y++)
+            for (int y = 1; y < _height - 1; y++)
             {
-                image.SetPixel((int)(x * spacingX), (int)(y * spacingY), _gridColor);//Center
+                gridImage.SetPixel((int)(x * spacingX), (int)(y * spacingY), _gridColor);//Center
 
-                image.SetPixel((int)(x * spacingX), (int)(y * spacingY - 1), _gridColor);//Top
-                image.SetPixel((int)(x * spacingX), (int)(y * spacingY + 1), _gridColor);//Bottom
+                gridImage.SetPixel((int)(x * spacingX), (int)(y * spacingY - 1), _gridColor);//Top
+                gridImage.SetPixel((int)(x * spacingX), (int)(y * spacingY + 1), _gridColor);//Bottom
 
-                image.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY), _gridColor);//Left
-                image.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY), _gridColor);//Right
+                gridImage.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY), _gridColor);//Left
+                gridImage.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY), _gridColor);//Right
 
-                image.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY - 1), _gridColor);//Top left
-                image.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY - 1), _gridColor);//Top Right
+                gridImage.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY - 1), _gridColor);//Top left
+                gridImage.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY - 1), _gridColor);//Top Right
 
-                image.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY + 1), _gridColor);//Bottom left
-                image.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY + 1), _gridColor);//Bottom Right
+                gridImage.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY + 1), _gridColor);//Bottom left
+                gridImage.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY + 1), _gridColor);//Bottom Right
 
             }
         }
 
-        image.Unlock();
+        gridImage.Unlock();
 
         ImageTexture gridTexture = new ImageTexture();
 
-        gridTexture.CreateFromImage(image);
+        gridTexture.CreateFromImage(gridImage);
 
         GetNode<TextureRect>("Grid").Texture = gridTexture;
     }
@@ -229,10 +229,14 @@ public class GameOfLifeManager : Node2D
 
         image.Resize((int)GetViewport().GetVisibleRect().Size.x, (int)GetViewport().GetVisibleRect().Size.y, Image.Interpolation.Nearest);
 
+        ImageTexture imageTexture = new ImageTexture();
 
         imageTexture.CreateFromImage(image);
 
         textureRect.Texture = imageTexture;
+
+        image.Dispose();
+        imageTexture.Dispose();
     }
 
     //SIGNAL
