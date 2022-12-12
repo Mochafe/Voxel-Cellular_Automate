@@ -86,7 +86,7 @@ public class CameraManager : Spatial
             }
         }
 
-        if(@event.IsActionPressed("dig"))
+        if(@event.IsActionPressed("remove"))
         {
             var from = Camera.ProjectRayOrigin(GetViewport().GetMousePosition());
             var to = from + Camera.ProjectRayNormal(GetViewport().GetMousePosition()) * 200;
@@ -100,7 +100,7 @@ public class CameraManager : Spatial
             }
         }
 
-        if (@event.IsActionPressed("create"))
+        if (@event.IsActionPressed("add"))
         {
             var from = Camera.ProjectRayOrigin(GetViewport().GetMousePosition());
             var to = from + Camera.ProjectRayNormal(GetViewport().GetMousePosition()) * 200;

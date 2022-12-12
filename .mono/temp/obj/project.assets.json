@@ -8,26 +8,24 @@
     ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
-    "C:\\Users\\after\\.nuget\\packages\\": {}
+    "/home/florian/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\USERS\\AFTER\\DOCUMENTS\\GODOT\\PROCEDURAL GEOMETRY\\Procedural Geometry.csproj",
+      "projectUniqueName": "/home/florian/games/Voxel-Cellular_Automate/Procedural Geometry.csproj",
       "projectName": "Procedural Geometry",
-      "projectPath": "C:\\USERS\\AFTER\\DOCUMENTS\\GODOT\\PROCEDURAL GEOMETRY\\Procedural Geometry.csproj",
-      "packagesPath": "C:\\Users\\after\\.nuget\\packages\\",
-      "outputPath": "C:\\USERS\\AFTER\\DOCUMENTS\\GODOT\\PROCEDURAL GEOMETRY\\.mono\\temp\\obj\\",
+      "projectPath": "/home/florian/games/Voxel-Cellular_Automate/Procedural Geometry.csproj",
+      "packagesPath": "/home/florian/.nuget/packages/",
+      "outputPath": "/home/florian/games/Voxel-Cellular_Automate/.mono/temp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\after\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/florian/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net472"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -45,7 +43,7 @@
     "frameworks": {
       "net472": {
         "targetAlias": "net472",
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.111/RuntimeIdentifierGraph.json"
       }
     }
   }

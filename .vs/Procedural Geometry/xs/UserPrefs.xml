@@ -1,0 +1,29 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Scripts/CellularAutomata/GameOfLifeManager.cs">
+    <Files>
+      <File FileName="Scripts/CellularAutomata/GameOfLifeManager.cs" Line="191" Column="48" />
+      <File FileName="Scripts/CellularAutomata/GameOfLifeHUD.cs" Line="6" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Procedural Geometry" expanded="True">
+            <Node name="Procedural Geometry" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="CellularAutomata" expanded="True">
+                  <Node name="GameOfLifeManager.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

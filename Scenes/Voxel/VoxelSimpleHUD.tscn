@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
-[ext_resource path="res://Scripts/VoxelSimpleHUD.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/Voxel/VoxelSimpleHUD.cs" type="Script" id=2]
 
 [node name="VoxelSimpleHUD" type="CanvasLayer"]
 script = ExtResource( 2 )
