@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/Voxel/VoxelSimpleHUD.cs" type="Script" id=2]
+[ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
 
 [node name="VoxelSimpleHUD" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -9,19 +13,21 @@ script = ExtResource( 2 )
 [node name="WireframeToggle" type="CheckButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -179.0
+margin_left = -193.0
 margin_bottom = 40.0
 theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Mode Fil de Fer"
 icon_align = 2
 
 [node name="OptimizationToggle" type="CheckButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -179.0
+margin_left = -193.0
 margin_top = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 3 )
 pressed = true
 text = "Optimisation"
 icon_align = 2

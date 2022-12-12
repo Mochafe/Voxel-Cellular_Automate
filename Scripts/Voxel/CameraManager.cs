@@ -86,8 +86,19 @@ public class CameraManager : Spatial
             }
         }
 
-        if(@event.IsActionPressed("remove"))
+
+        //MOUSE ACTION
+
+        //Early return if mouse is not in viewport to prevent crash
+        if (GetViewport().GetMousePosition().x > GetViewport().GetVisibleRect().Size.x || GetViewport().GetMousePosition().x < 0)
+            return;
+
+        if (GetViewport().GetMousePosition().y > GetViewport().GetVisibleRect().Size.y || GetViewport().GetMousePosition().y < 0)
+            return;
+
+        if (@event.IsActionPressed("remove"))
         {
+
             var from = Camera.ProjectRayOrigin(GetViewport().GetMousePosition());
             var to = from + Camera.ProjectRayNormal(GetViewport().GetMousePosition()) * 200;
 

@@ -12,7 +12,10 @@ public class GameOfLifeManager : Node2D
     TextureRect textureRect;
 
     [Export]
-    Color color = new Color();
+    Color _cellColor = new Color();
+
+    [Export]
+    Color _gridColor = new Color();
 
     [Export]
     private int _width = 160;
@@ -28,12 +31,53 @@ public class GameOfLifeManager : Node2D
     {
         cells = new CellType[_width, _height];
 
-        cells[10, 15] = CellType.Cell;
-        cells[11, 15] = CellType.Cell;
-        cells[10, 16] = CellType.Cell;
+        DrawGrid();
+
+        textureRect = GetNode<TextureRect>("Texture");
+    }
+
+    //DRAW GRID
+    private void DrawGrid()
+    {
+        Vector2 viewport = GetViewport().GetVisibleRect().Size;
+        Image image = new Image();
+        image.Create((int)viewport.x, (int)viewport.y, false, Image.Format.Rgba8);
+
+        image.Lock();
+
+        float spacingX = viewport.x / _width;
+        float spacingY = viewport.y / _height;
 
 
-        textureRect = GetChild<TextureRect>(1);
+        //Draw Line
+        for (int x = 0; x < _width; x++)
+        {
+            for (int y = 0; y < _height; y++)
+            {
+                image.SetPixel((int)(x * spacingX), (int)(y * spacingY), _gridColor);//Center
+
+                image.SetPixel((int)(x * spacingX), (int)(y * spacingY - 1), _gridColor);//Top
+                image.SetPixel((int)(x * spacingX), (int)(y * spacingY + 1), _gridColor);//Bottom
+
+                image.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY), _gridColor);//Left
+                image.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY), _gridColor);//Right
+
+                image.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY - 1), _gridColor);//Top left
+                image.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY - 1), _gridColor);//Top Right
+
+                image.SetPixel((int)(x * spacingX - 1), (int)(y * spacingY + 1), _gridColor);//Bottom left
+                image.SetPixel((int)(x * spacingX + 1), (int)(y * spacingY + 1), _gridColor);//Bottom Right
+
+            }
+        }
+
+        image.Unlock();
+
+        ImageTexture gridTexture = new ImageTexture();
+
+        gridTexture.CreateFromImage(image);
+
+        GetNode<TextureRect>("Grid").Texture = gridTexture;
     }
 
     public void UpdateCell()
@@ -47,9 +91,21 @@ public class GameOfLifeManager : Node2D
     {
         if(@event is InputEventMouseButton eventMouseButton)
         {
-            if(eventMouseButton.IsAction("add"))
+            //Early return if mouse is not in viewport to prevent crash
+            if (eventMouseButton.Position.x > GetViewport().GetVisibleRect().Size.x || eventMouseButton.Position.x < 0)
+                return;
+
+            if (eventMouseButton.Position.y > GetViewport().GetVisibleRect().Size.y || eventMouseButton.Position.y < 0)
+                return;
+
+            if (eventMouseButton.IsAction("add"))
             {
                 ModifyCell(new Vector2((_width / GetViewport().GetVisibleRect().Size.x) * eventMouseButton.Position.x, (_height / GetViewport().GetVisibleRect().Size.y) * eventMouseButton.Position.y), CellType.Cell);
+            }
+
+            if (eventMouseButton.IsAction("remove"))
+            {
+                ModifyCell(new Vector2((_width / GetViewport().GetVisibleRect().Size.x) * eventMouseButton.Position.x, (_height / GetViewport().GetVisibleRect().Size.y) * eventMouseButton.Position.y), CellType.None);
             }
         }
     }
@@ -164,7 +220,7 @@ public class GameOfLifeManager : Node2D
             {
                 if (cells[x, y] == CellType.Cell)
                 {
-                    image.SetPixel(x, y, color);
+                    image.SetPixel(x, y, _cellColor);
                 }
             }
         }

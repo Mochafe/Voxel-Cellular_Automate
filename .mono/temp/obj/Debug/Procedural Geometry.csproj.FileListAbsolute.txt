@@ -16,3 +16,11 @@ C:/Users/after/Documents/Godot/Procedural Geometry/.mono/temp/obj/Debug/Procedur
 /home/florian/games/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.csproj.CoreCompileInputs.cache
 /home/florian/games/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.dll
 /home/florian/games/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.pdb
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/bin/Debug/Procedural Geometry.dll
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/bin/Debug/Procedural Geometry.pdb
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.csproj.AssemblyReference.cache
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.AssemblyInfoInputs.cache
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.AssemblyInfo.cs
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.csproj.CoreCompileInputs.cache
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.dll
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/Debug/Procedural Geometry.pdb

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/CellularAutomata/GameOfLifeManager.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/CellularAutomata/GameOfLife/GameOfLifeHUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/CellularAutomata/Background.cs" type="Script" id=3]
 
 [sub_resource type="Image" id=3]
 data = {
@@ -18,12 +19,20 @@ size = Vector2( 160, 90 )
 
 [node name="GameOfLife" type="Node2D"]
 script = ExtResource( 1 )
-color = Color( 1, 1, 1, 1 )
+_cellColor = Color( 1, 1, 1, 1 )
+_gridColor = Color( 0.466667, 0.462745, 0.462745, 1 )
+_width = 90
+_height = 45
 
 [node name="Background" type="ColorRect" parent="."]
-margin_right = 1024.0
+margin_right = 1080.0
 margin_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
+script = ExtResource( 3 )
+
+[node name="Grid" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="Texture" type="TextureRect" parent="."]
 anchor_left = 1.0
