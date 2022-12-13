@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/Procedural Geometry.csproj",
+      "projectUniqueName": "/home/florian/games/Voxel-Cellular_Automate/Procedural Geometry.csproj",
       "projectName": "Procedural Geometry",
-      "projectPath": "/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/Procedural Geometry.csproj",
+      "projectPath": "/home/florian/games/Voxel-Cellular_Automate/Procedural Geometry.csproj",
       "packagesPath": "/home/florian/.nuget/packages/",
-      "outputPath": "/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/",
+      "outputPath": "/home/florian/games/Voxel-Cellular_Automate/.mono/temp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/florian/.config/NuGet/NuGet.Config"
@@ -43,7 +43,7 @@
     "frameworks": {
       "net472": {
         "targetAlias": "net472",
-        "runtimeIdentifierGraphPath": "/usr/lib/mono/msbuild/Current/bin/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.111/RuntimeIdentifierGraph.json"
       }
     }
   }

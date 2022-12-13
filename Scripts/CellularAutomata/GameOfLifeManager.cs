@@ -1,10 +1,13 @@
 using Godot;
 using System;
 
-enum CellType
+namespace GameOfLife
 {
-    None,
-    Cell
+    enum CellType
+    {
+        None,
+        Cell
+    }
 }
 public class GameOfLifeManager : Node2D
 {
@@ -24,12 +27,12 @@ public class GameOfLifeManager : Node2D
     [Export]
     private int _height = 90;
 
-    CellType[,] cells;
+    GameOfLife.CellType[,] cells;
 
 
     public override void _Ready()
     {
-        cells = new CellType[_width, _height];
+        cells = new GameOfLife.CellType[_width, _height];
 
         DrawGrid();
 
@@ -50,9 +53,9 @@ public class GameOfLifeManager : Node2D
 
 
         //Draw Line
-        for (int x = 1; x < _width - 1; x++)
+        for (int x = 1; x < _width; x++)
         {
-            for (int y = 1; y < _height - 1; y++)
+            for (int y = 1; y < _height; y++)
             {
                 gridImage.SetPixel((int)(x * spacingX), (int)(y * spacingY), _gridColor);//Center
 
@@ -100,19 +103,19 @@ public class GameOfLifeManager : Node2D
 
             if (eventMouseButton.IsAction("add"))
             {
-                ModifyCell(new Vector2((_width / GetViewport().GetVisibleRect().Size.x) * eventMouseButton.Position.x, (_height / GetViewport().GetVisibleRect().Size.y) * eventMouseButton.Position.y), CellType.Cell);
+                ModifyCell(new Vector2((_width / GetViewport().GetVisibleRect().Size.x) * eventMouseButton.Position.x, (_height / GetViewport().GetVisibleRect().Size.y) * eventMouseButton.Position.y), GameOfLife.CellType.Cell);
             }
 
             if (eventMouseButton.IsAction("remove"))
             {
-                ModifyCell(new Vector2((_width / GetViewport().GetVisibleRect().Size.x) * eventMouseButton.Position.x, (_height / GetViewport().GetVisibleRect().Size.y) * eventMouseButton.Position.y), CellType.None);
+                ModifyCell(new Vector2((_width / GetViewport().GetVisibleRect().Size.x) * eventMouseButton.Position.x, (_height / GetViewport().GetVisibleRect().Size.y) * eventMouseButton.Position.y), GameOfLife.CellType.None);
             }
         }
     }
     //CELL
     private void ProcessCell()
     {
-        CellType[,] cellsBuffer = new CellType[_width, _height];
+        GameOfLife.CellType[,] cellsBuffer = new GameOfLife.CellType[_width, _height];
         int neightbours = 0;
 
 
@@ -122,20 +125,20 @@ public class GameOfLifeManager : Node2D
             {
                 neightbours = GetNeightbourCount(ref cells, new Vector2(x, y));
 
-                if(cells[x, y] == CellType.Cell)
+                if(cells[x, y] == GameOfLife.CellType.Cell)
                 {
-                    cellsBuffer[x, y] = CellType.Cell;
+                    cellsBuffer[x, y] = GameOfLife.CellType.Cell;
                 }
 
-                if (cells[x, y] == CellType.Cell &&
+                if (cells[x, y] == GameOfLife.CellType.Cell &&
                 (neightbours > 3 || neightbours < 2)) {
-                    cellsBuffer[x, y] = CellType.None;
+                    cellsBuffer[x, y] = GameOfLife.CellType.None;
                 }
 
 
-                if (cells[x, y] == CellType.None && neightbours == 3)
+                if (cells[x, y] == GameOfLife.CellType.None && neightbours == 3)
                 {
-                    cellsBuffer[x, y] = CellType.Cell;
+                    cellsBuffer[x, y] = GameOfLife.CellType.Cell;
                 }
             }
         }
@@ -143,54 +146,54 @@ public class GameOfLifeManager : Node2D
         cells = cellsBuffer;
     }
 
-    private int GetNeightbourCount(ref CellType[,] cellsArg, Vector2 position)
+    private int GetNeightbourCount(ref GameOfLife.CellType[,] cellsArg, Vector2 position)
     {
         int neightbour = 0;
 
         //Up
-        if (cellsArg[(int)position.x, (int)position.y - 1] == CellType.Cell)
+        if (cellsArg[(int)position.x, (int)position.y - 1] == GameOfLife.CellType.Cell)
         {
             neightbour++;
         }
 
         //Down
-        if (cellsArg[(int)position.x, (int)position.y + 1] == CellType.Cell)
+        if (cellsArg[(int)position.x, (int)position.y + 1] == GameOfLife.CellType.Cell)
         {
             neightbour++;
         }
 
         //Left
-        if (cellsArg[(int)position.x - 1, (int)position.y] == CellType.Cell)
+        if (cellsArg[(int)position.x - 1, (int)position.y] == GameOfLife.CellType.Cell)
         {
             neightbour++;
         }
 
         //Right
-        if (cellsArg[(int)position.x + 1, (int)position.y] == CellType.Cell)
+        if (cellsArg[(int)position.x + 1, (int)position.y] == GameOfLife.CellType.Cell)
         {
             neightbour++;
         }
 
         //Top Left
-        if (cellsArg[(int)position.x - 1, (int)position.y - 1] == CellType.Cell)
+        if (cellsArg[(int)position.x - 1, (int)position.y - 1] == GameOfLife.CellType.Cell)
         {
             neightbour++;
         }
 
         //Top Right
-        if (cellsArg[(int)position.x + 1, (int)position.y - 1] == CellType.Cell)
+        if (cellsArg[(int)position.x + 1, (int)position.y - 1] == GameOfLife.CellType.Cell)
         {
             neightbour++;
         }
 
         //Bottom Left
-        if (cellsArg[(int)position.x - 1, (int)position.y + 1] == CellType.Cell)
+        if (cellsArg[(int)position.x - 1, (int)position.y + 1] == GameOfLife.CellType.Cell)
         {
             neightbour++;
         }
 
         //Bottom Right
-        if (cellsArg[(int)position.x + 1, (int)position.y + 1] == CellType.Cell)
+        if (cellsArg[(int)position.x + 1, (int)position.y + 1] == GameOfLife.CellType.Cell)
         {
             neightbour++;
         }
@@ -198,8 +201,12 @@ public class GameOfLifeManager : Node2D
         return neightbour;
     }
 
-    private void ModifyCell(Vector2 position, CellType type)
+    private void ModifyCell(Vector2 position, GameOfLife.CellType type)
     {
+        if (((int)position.x <= 1 || (int)position.x >= _width - 1) ||
+            ((int)position.y <= 1 || (int)position.y >= _height - 1)
+            ) return;
+
         cells[(int)position.x, (int)position.y] = type;
         ProcessTexture();
     }
@@ -218,7 +225,7 @@ public class GameOfLifeManager : Node2D
         {
             for (int y = 0; y < _height; y++)
             {
-                if (cells[x, y] == CellType.Cell)
+                if (cells[x, y] == GameOfLife.CellType.Cell)
                 {
                     image.SetPixel(x, y, _cellColor);
                 }

@@ -21,8 +21,6 @@ size = Vector2( 160, 90 )
 script = ExtResource( 1 )
 _cellColor = Color( 1, 1, 1, 1 )
 _gridColor = Color( 0.466667, 0.462745, 0.462745, 1 )
-_width = 90
-_height = 45
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 1080.0
