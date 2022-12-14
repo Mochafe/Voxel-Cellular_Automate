@@ -7,6 +7,8 @@ public class VoxelSimpleHUD : CanvasLayer
     public delegate void OnWireFrame(bool state);
     [Signal]
     public delegate void OnOptimization(bool state);
+    [Signal]
+    public delegate void ColorChanged(Color color);
 
     public void OnWireframeToggle(bool state)
     {
@@ -17,5 +19,15 @@ public class VoxelSimpleHUD : CanvasLayer
     {
         EmitSignal(nameof(OnOptimization), state);
 
+    }
+
+    public void OnColorChanged(Color color)
+    {
+        EmitSignal(nameof(ColorChanged), color);
+    }
+
+    public void OnColorToggle(bool isColor)
+    {
+        GetNode<Panel>("Panel").Visible = isColor;
     }
 }

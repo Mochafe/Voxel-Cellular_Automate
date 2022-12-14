@@ -494,4 +494,8 @@ public class Chunk : Godot.MeshInstance
         _toggleOptimization = state;
     }
 
+    public void OnColorChanged(Color color)
+    {
+        _color = color;
+    }
 }

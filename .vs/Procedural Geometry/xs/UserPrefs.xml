@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Scripts/CellularAutomata/GameOfLifeManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Scripts/Voxel/VoxelSimpleHUD.cs">
     <Files>
       <File FileName="Scripts/Voxel/Chunk.cs" Line="60" Column="1" />
       <File FileName="Scripts/CellularAutomata/GameOfLifeManager.cs" Line="3" Column="1" />
+      <File FileName="Scripts/Voxel/VoxelSimpleHUD.cs" Line="22" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,10 +11,10 @@
           <Node name="Procedural Geometry" expanded="True">
             <Node name="Procedural Geometry" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="CellularAutomata" expanded="True">
-                  <Node name="GameOfLifeManager.cs" selected="True" />
+                <Node name="CellularAutomata" expanded="True" />
+                <Node name="Voxel" expanded="True">
+                  <Node name="VoxelSimpleHUD.cs" selected="True" />
                 </Node>
-                <Node name="Voxel" expanded="True" />
               </Node>
             </Node>
           </Node>
