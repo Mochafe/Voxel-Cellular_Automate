@@ -55,13 +55,23 @@ margin_right = 794.0
 margin_bottom = 179.0
 
 [node name="ColorPicker" type="ColorPicker" parent="Panel"]
-margin_left = 22.0
-margin_top = 18.0
-margin_right = 330.0
-margin_bottom = 480.0
+margin_left = 30.0
+margin_top = 26.0
+margin_right = 338.0
+margin_bottom = 488.0
 color = Color( 0.627451, 0.627451, 0.627451, 1 )
+
+[node name="ChangeScene" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 61.0
+margin_top = -55.0
+margin_right = 125.0
+margin_bottom = -31.0
+text = "Changer de scene"
 
 [connection signal="toggled" from="WireframeToggle" to="." method="OnWireframeToggle"]
 [connection signal="toggled" from="OptimizationToggle" to="." method="OnOptimizationToggle"]
 [connection signal="toggled" from="ColorToggle" to="." method="OnColorToggle"]
 [connection signal="color_changed" from="Panel/ColorPicker" to="." method="OnColorChanged"]
+[connection signal="pressed" from="ChangeScene" to="." method="OnChangeScenePressed"]

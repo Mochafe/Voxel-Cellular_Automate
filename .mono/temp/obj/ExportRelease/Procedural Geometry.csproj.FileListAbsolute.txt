@@ -1,0 +1,8 @@
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/bin/ExportRelease/Procedural Geometry.dll
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/bin/ExportRelease/Procedural Geometry.pdb
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/ExportRelease/Procedural Geometry.csproj.AssemblyReference.cache
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/ExportRelease/Procedural Geometry.AssemblyInfoInputs.cache
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/ExportRelease/Procedural Geometry.AssemblyInfo.cs
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/ExportRelease/Procedural Geometry.csproj.CoreCompileInputs.cache
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/ExportRelease/Procedural Geometry.dll
+/home/florian/Desktop/Code/Godot/Voxel-Cellular_Automate/.mono/temp/obj/ExportRelease/Procedural Geometry.pdb

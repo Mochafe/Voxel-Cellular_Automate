@@ -30,4 +30,9 @@ public class VoxelSimpleHUD : CanvasLayer
     {
         GetNode<Panel>("Panel").Visible = isColor;
     }
+
+    public void OnChangeScenePressed()
+    {
+        GetTree().ChangeScene("res://Scenes/CellularAutomata/GameOfLife/GameOfLife.tscn");
+    }
 }

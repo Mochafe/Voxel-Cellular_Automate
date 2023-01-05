@@ -17,4 +17,9 @@ public class GameOfLifeHUD : CanvasLayer
     {
         EmitSignal(nameof(TickChanged), value);
     }
+
+    public void OnChangeScenePressed()
+    {
+        GetTree().ChangeScene("res://Scenes/Voxel/VoxelSimple.tscn");
+    }
 }
